@@ -1,0 +1,33 @@
+.home-page{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("./login-bg.jpg");
+  background-size: cover;
+
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .overlay {
+    position: absolute;
+    opacity: .6;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: radial-gradient(ellipse at center,#666 0,#000 100%);
+  }
+
+
+  .home-container {
+    z-index: 1;
+    width: 450px;
+    margin: auto 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+
+  }
+}

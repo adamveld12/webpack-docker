@@ -1,0 +1,48 @@
+{
+  "name": "webpack_docker_starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "npm install",
+    "docker-dev": "webpack-dev-server --config webpack.config.docker.js --watch --progress --colors --hot --inline -d --host 0.0.0.0 --port 80",
+    "local": "webpack-dev-server --watch --progress --colors --hot --inline --no-info -d",
+    "test-deploy": "webpack --progress --display-modules --colors -p && surge -d casterly.surge.sh -p ./public",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "webpack",
+    "react"
+  ],
+  "author": "Adam Veldhousen",
+  "license": "MIT",
+  "homepage": "",
+  "devDependencies": {
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "less-loader": "^2.2.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.10",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "history": "^1.17.0",
+    "immutable": "^3.7.6",
+    "less": "^2.5.3",
+    "mcfly": "0.0.10",
+    "react": "^0.14.6",
+    "react-bootstrap": "^0.28.2",
+    "react-dom": "^0.14.6",
+    "react-router": "^1.0.3",
+    "webpack": "^1.12.10"
+  }
+}

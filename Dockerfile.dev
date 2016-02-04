@@ -1,0 +1,18 @@
+FROM node:latest
+MAINTAINER 4MeLabs
+
+# Prepare app directory
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+RUN npm install webpack webpack-dev-server surge -g
+
+VOLUME ["/usr/src/app"]
+
+
+# Expose the app port
+EXPOSE 80
+
+# Start the app
+CMD npm build && npm run docker-dev
