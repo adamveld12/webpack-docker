@@ -1,13 +1,14 @@
 var webpack = require('webpack');
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
+
 module.exports = {
   entry: {
     entry: './src/entry.js',
   },
   output: {
-    path: "build",
-    publicPath: "build",
+    path: "public",
+    publicPath: "/build",
     filename: "[name].js"
   },
   module: {

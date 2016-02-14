@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Adam Veldhousen -- Software Dude -- @adamveld12
+
+# THANKS
+
+    Lyssa Veldhousen for letting me come to bed at 2AM for a couple of weekends
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, ES6, React, Webpack, Normalize.css, Less, Docker
