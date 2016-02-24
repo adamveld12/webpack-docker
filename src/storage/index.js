@@ -1,3 +1,0 @@
-import McFly from 'mcfly'
-
-

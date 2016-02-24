@@ -1,5 +1,5 @@
 FROM node:latest
-MAINTAINER 4MeLabs
+MAINTAINER Adam Veldhousen @adamveld12
 
 WORKDIR /usr/src/app
 

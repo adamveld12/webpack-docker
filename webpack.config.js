@@ -1,23 +1,28 @@
 var webpack = require('webpack');
+var path = require('path');
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 
 module.exports = {
   entry: {
-    entry: './src/entry.js',
+    entry: './client/entry.js',
   },
   output: {
-    path: "public",
-    publicPath: "/build",
+    path: "public/bundle/",
+    publicPath: "/bundle/",
     filename: "[name].js"
   },
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
+        include: [ path.resolve(__dirname, "client") ],
         exclude: /(node_modules|bower_components)/,
         loader: 'babel',
-        query: { presets: ['react', 'es2015'] }
+        query: {
+          plugins: ['transform-runtime'],
+          presets: ['es2015', 'stage-0', 'react']
+        }
       },
       { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
       { test: /\.css$/, loader: "style!css" },
