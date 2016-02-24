@@ -6,7 +6,7 @@
   "scripts": {
     "docker-dev": "webpack-dev-server --config webpack.config.docker.js --watch --progress --colors --hot --inline -d --host 0.0.0.0 --port 80",
     "local": "webpack-dev-server --watch --progress --colors --hot --inline --no-info -d",
-    "prodbuild": "webpack --progress --display-modules --colors -p",
+    "prodbuild": "set NODE_ENV=\"production\" && webpack --progress --display-modules --colors -p",
     "deploy": "webpack --progress --display-modules --colors -p && surge -p ./public"
   },
   "repository": {

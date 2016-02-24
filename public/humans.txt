@@ -11,4 +11,4 @@
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5, ES6, React, Webpack, Normalize.css, Less, Docker
+    CSS3, HTML5, ES7, React, Webpack, Normalize.css, Less, Docker, Redux
