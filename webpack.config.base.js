@@ -1,9 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
-var environmentPlug = 
 
-module.exports = {
+var config = {
   entry: {
     entry: './client/entry.js',
   },
@@ -34,3 +33,8 @@ module.exports = {
     extensions: ['', '.js', '.json', '.less']
   }
 };
+
+module.exports = function(environment){
+  config.plugins.push(new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"' + environment + '"' }));
+  return config;
+}

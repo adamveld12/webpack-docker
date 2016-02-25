@@ -25,9 +25,9 @@ export default class Brand extends React.Component{
 Brand.propTypes = {
   showLogo: React.PropTypes.bool,
   invert: React.PropTypes.bool,
-};
+}
 
 Brand.defaultProps = {
   showLogo: false,
   invert: false,
-};
+}

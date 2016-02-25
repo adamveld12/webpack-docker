@@ -2,14 +2,14 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router, browserHistory, Route, IndexRoute, Redirect } from 'react-router'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, compose } from 'redux'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import DevMonitor from './devtools.js'
 
 
 const store = createStore(
-  combineReducers({
-    routing: routerReducer
-  })
+  combineReducers({ routing: routerReducer }),
+  compose(DevMonitor.instrument())
 )
 
 const history = syncHistoryWithStore(browserHistory, store)
@@ -25,7 +25,8 @@ class App extends React.Component {
   render(){
     return (
       <section id="main">
-        { this.props.children }
+          <DevMonitor />
+          { this.props.children }
       </section>
     )
   }
@@ -37,7 +38,6 @@ render(
     <Route path="/" component={App}>
       <IndexRoute getComponent={pages.Home}/>
       <Route path="/home" getComponent={pages.Home}/>
-
       <Redirect from="*" to="/" />
     </Route>
   </Router>

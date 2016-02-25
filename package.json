@@ -4,9 +4,9 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "docker-dev": "webpack-dev-server --config webpack.config.docker.js --watch --progress --colors --hot --inline -d --host 0.0.0.0 --port 80",
+    "docker-dev": "webpack-dev-server --config webpack.config.dev.js --watch --progress --colors --hot --inline -d --host 0.0.0.0 --port 80",
     "local": "webpack-dev-server --watch --progress --colors --hot --inline --no-info -d",
-    "prodbuild": "set NODE_ENV=\"production\" && webpack --progress --display-modules --colors -p",
+    "prodbuild": "webpack --progress --display-modules --colors -p",
     "deploy": "webpack --progress --display-modules --colors -p && surge -p ./public"
   },
   "repository": {
@@ -24,14 +24,18 @@
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.1",
     "babel-plugin-transform-runtime": "^6.5.2",
+    "babel-polyfill": "^6.5.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.5.0",
-    "babel-polyfill": "^6.5.0",
     "babel-runtime": "^6.5.0",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
     "less-loader": "^2.2.2",
+    "less": "^2.5.3",
+    "redux-devtools": "^3.1.1",
+    "redux-devtools-diff-monitor": "^4.0.1",
+    "redux-devtools-dock-monitor": "^1.1.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.10",
@@ -39,13 +43,11 @@
   },
   "dependencies": {
     "history": "^1.17.0",
-    "less": "^2.5.3",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
     "react-router": "^2.0.0",
     "react-router-redux": "^4.0.0",
-    "redux": "^3.3.1",
-    "webpack": "^1.12.10"
+    "redux": "^3.3.1"
   }
 }
