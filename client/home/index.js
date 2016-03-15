@@ -1,5 +1,5 @@
 import React from 'react'
-import { Brand, Copyright } from '../components';
+import { Brand, Copyright } from '../components'
 
 import './home.less'
 

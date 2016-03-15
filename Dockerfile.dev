@@ -9,4 +9,4 @@ VOLUME ["/usr/src/app"]
 
 EXPOSE 80
 
-ENTRYPOINT npm install && npm run docker-dev
+ENTRYPOINT npm install && webpack-dev-server --config webpack.config.dev.js --watch --progress --colors --hot --inline -d --host 0.0.0.0 --port 80 --content-base ./public
